@@ -9,6 +9,9 @@
       //Third-party modules
       'firebase',
 
+      //costume modules
+      'mutantApp.home',
+
   ]);
 
 })();
