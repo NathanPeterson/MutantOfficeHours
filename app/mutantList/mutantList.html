@@ -1,3 +1,4 @@
+
 <form ng-submit="vm.addMutant()">
   <div class="medium-3 small-6 columns">
     <input ng-model="vm.newMutant.name" type="text" name="mutantName" placeholder="Name" required>
@@ -34,7 +35,7 @@
         <td><input type="checkbox" ng-model="mutant.complete"></td>
         <td>
           <button class="button success">Text</button>
-          <button class="button alert">Delete</button>
+          <button ng-click="vm.deleteMutant(mutant)" class="button alert">Delete</button>
         </td>
       </tr>
     </tbody>
