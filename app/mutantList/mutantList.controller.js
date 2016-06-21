@@ -8,10 +8,10 @@
     MutantListController.$inject = ['$firebaseArray']
     function MutantListController($firebaseArray){
       var vm = this;
-      var fireMutantRef = new Firebase('https://mutant-school.firebaseio.com/')
+      var rootRef = firebase.database().ref();
       vm.addMutant = addMutant;
 
-      vm.mutants = $firebaseArray(fireMutantRef);
+      vm.mutants = $firebaseArray(rootRef);
       vm.newMutant = new Mutant();
 
       function Mutant(){
@@ -24,6 +24,7 @@
 
       function addMutant(){
         vm.mutants.$add(vm.newMutant.name);
+        vm.newMutant = new Mutant();
       }
     }
 })();
