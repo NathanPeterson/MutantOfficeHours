@@ -5,12 +5,13 @@
     .module('mutantApp.mutantList')
     .controller('MutantListController', MutantListController);
 
-    function MutantListController(){
+    MutantListController.$inject = ['$firebaseArray']
+    function MutantListController($firebaseArray){
       var vm = this;
-
+      var fireMutantRef = new Firebase('https://mutant-school.firebaseio.com/')
       vm.addMutant = addMutant;
 
-      vm.mutants = ['deadpool', 'gambit', 'nightcrawler'];
+      vm.mutants = $firebaseArray(fireMutantRef);
       vm.newMutant = new Mutant();
 
       function Mutant(){
@@ -22,7 +23,7 @@
       }
 
       function addMutant(){
-        vm.mutants.push(vm.newMutant.name);
+        vm.mutants.$add(vm.newMutant.name);
       }
     }
 })();
