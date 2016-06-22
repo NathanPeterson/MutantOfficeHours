@@ -12,6 +12,7 @@
       //costume modules
       'mutantApp.home',
       'mutantApp.mutantList',
+      'mutantApp.auth',
 
   ]);
 
