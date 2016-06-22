@@ -12,6 +12,7 @@
     var auth = $firebaseAuth();
 
     vm.register = register;
+    vm.login = login;
 
     vm.user = {
       email: '',
@@ -27,6 +28,17 @@
          .catch(function(error){
            console.log(error);
          })
+    }
+
+    function login(user){
+      return auth.$signInWithEmailAndPassword(user.email,
+        user.password)
+        .then(function(){
+          console.log(user);
+        })
+        .catch(function(){
+          console.log(user);
+        })
     }
   }
 })();
