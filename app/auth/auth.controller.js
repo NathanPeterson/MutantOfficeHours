@@ -22,8 +22,8 @@
     function register(user) {
       return auth.$createUserWithEmailAndPassword(user.email,
          user.password)
-         .then(function(user){
-           console.log(user);
+         .then(function(){
+           vm.login(user)
          })
          .catch(function(error){
            console.log(error);
@@ -34,7 +34,7 @@
       return auth.$signInWithEmailAndPassword(user.email,
         user.password)
         .then(function(){
-          console.log(user);
+          console.log("hello from login " + user);
         })
         .catch(function(){
           console.log(user);
