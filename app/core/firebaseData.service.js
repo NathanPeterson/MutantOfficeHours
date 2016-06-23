@@ -11,6 +11,8 @@
     var root = firebase.database().ref();
     var service = {
       root: root,
+      mutants: root.child('mutants'),
+      texts: root.child('texts'),
 
     };
 

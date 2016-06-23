@@ -9,8 +9,7 @@
 
   function MutantListController(mutantService, firebaseDataService) {
     var vm = this;
-    var textsRef = firebaseDataService.root.child('texts');
-
+    
     vm.addMutant = addMutant;
     vm.mutants = mutantService.mutants;
     vm.newMutant = new mutantService.Mutant();
@@ -41,7 +40,7 @@
         topic: mutant.topic,
         phoneNumber: mutant.phone
       };
-      textsRef.push(newText);
+      firebaseDataService.texts.push(newText);
       mutant.notified =true;
       vm.mutants.$save(mutant);
     }
