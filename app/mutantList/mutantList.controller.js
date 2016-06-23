@@ -18,6 +18,7 @@
     vm.deleteMutant = deleteMutant;
     vm.toggleComplete = toggleComplete;
     vm.sendText = sendText;
+    
 
 
     function Mutant() {
