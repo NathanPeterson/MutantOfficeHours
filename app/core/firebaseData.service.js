@@ -5,8 +5,14 @@
     .module('mutantApp.core')
     .factory('firebaseDataService', firebaseDataService);
 
+
   function firebaseDataService(){
-    var service = {};
+
+    var root = firebase.database().ref();
+    var service = {
+      root: root,
+
+    };
 
     return service;
   }
