@@ -10,6 +10,7 @@
   function authService($firebaseAuth){
     var auth = $firebaseAuth();
     var service = {
+      auth: auth,
       register: register,
       login: login,
       logout: logout,

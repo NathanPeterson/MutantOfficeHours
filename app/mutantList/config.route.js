@@ -13,6 +13,15 @@
       templateUrl: 'app/mutantList/mutantList.html',
       controller: 'MutantListController',
       controllerAs: 'vm',
+      resolve: {
+        user: resolveUser,
+      },
     })
+  }
+
+  resolveUser.$inject = ['authService'];
+
+  function resolveUser(authService){
+    return authService.auth.$requireSignIn();
   }
 })();
