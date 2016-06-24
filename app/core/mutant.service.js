@@ -11,7 +11,7 @@
   function mutantService($firebaseArray, firebaseDataService){
     var service = {
       Mutant: Mutant,
-      mutants: $firebaseArray(firebaseDataService.mutants),
+      mutantsByUser: mutantsByUser,
     };
 
     return service;
@@ -24,6 +24,10 @@
       this.topic = '';
       this.notified = false;
       this.complete = false;
+    }
+
+    function mutantsByUser(uid){
+      return $firebaseArray(firebaseDataService.users.child(uid).child('mutants'));
     }
 
   }

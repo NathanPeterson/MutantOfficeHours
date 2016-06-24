@@ -13,6 +13,7 @@
       root: root,
       mutants: root.child('mutants'),
       texts: root.child('texts'),
+      users: root.child('users'),
 
     };
 
