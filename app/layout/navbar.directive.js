@@ -11,6 +11,7 @@
       restrict: 'E',
       controller: NavBarController,
       controllerAs: 'vm',
+      scope: {},
     }
   }
 
